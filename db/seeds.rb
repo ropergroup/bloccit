@@ -21,6 +21,10 @@ require 'random_data'
    )
  end
 
+puts "#{Post.count}"
+ Post.find_or_create_by(title: "Captain America is over Rated", body: "Being a good person is not a super power")
+puts "#{Post.count}"
+
  puts "Seed finished"
  puts "#{Post.count} posts created"
  puts "#{Comment.count} comments created"
