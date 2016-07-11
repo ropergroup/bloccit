@@ -1,17 +1,17 @@
 class AdvertisementsController < ApplicationController
   def index
-    @advertisement = Advertisement.all
+    @advertisements = Advertisement.all
   end
 
   def show
-  @advertisement = Advertisement.all
-end
+    @advertisement = Advertisement.find(params[:id])
+  end
 
-def new
-@advertisement = Advertisement.new
-end
+  def new
+    @advertisement = Advertisement.new
+  end
 
-def create
+  def create
 
    @advertisement = Advertisement.new
    @advertisement.title = params[:advertisement][:title]
@@ -29,4 +29,4 @@ def create
      render :new
    end
  end
- end
+end

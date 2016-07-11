@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe AdvertisementsController, type: :controller do
 let (:advertisements) do
-  Advertisements.create(
+  Advertisement.create(
   id: 1
   title: "This is a test",
   body: "This is a body test",
