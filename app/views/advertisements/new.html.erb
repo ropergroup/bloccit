@@ -1,2 +1,12 @@
-<h1>Advertisements#new</h1>
-<p>Find me in app/views/advertisements/new.html.erb</p>
+<%= form_for @advertisement do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.label :price %>
+  <%= f.text_area :price %>
+
+  <%= f.submit "Save" %>
+<% end %>
