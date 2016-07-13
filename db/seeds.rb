@@ -27,7 +27,8 @@ require 'random_data'
    Question.create!(
 
      title:  RandomData.random_sentence,
-     body:   RandomData.random_paragraph
+     body:   RandomData.random_paragraph,
+     resolved: false
    )
  end
  posts = Question.all
