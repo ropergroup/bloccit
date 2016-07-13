@@ -1,9 +1,30 @@
-<%= form_for @question do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<h1>New Question</h1>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+ <div class="row">
+   <div class="col-md-4">
+     <p>Guidelines for Questions</p>
+     <ul>
+       <li>There is such a thing as a stupid question so do not ask them.</li>
+       <li>Ask the question in the form of modern dance.</li>
+       <li>The incessant use of hashtags will get you banned.</li>
+     </ul>
+   </div>
+   <div class="col-md-8">
+     <%= form_for @question do |f| %>
+       <div class="form-group">
 
-  <%= f.submit "Save" %>
-<% end %>
+         <%= f.label :title %>
+
+         <%= f.text_field :title, class: 'form-control', placeholder: "Enter post title" %>
+       </div>
+       <div class="form-group">
+         <%= f.label :body %>
+         <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
+       </div>
+       <div class="form-group">
+
+         <%= f.submit "Save", class: 'btn btn-success' %>
+       </div>
+     <% end %>
+   </div>
+ </div>
