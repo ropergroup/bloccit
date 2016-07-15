@@ -21,8 +21,9 @@ class User < ActiveRecord::Base
     if name
     name_array =[]
     name.split.each do |namex|
-      name_array << namex.capitalize.join(" ")
+      name_array << namex.capitalize
       end
+      self.name = name_array.join(" ")
     end
   end
 end
