@@ -35,5 +35,13 @@ RSpec.describe User, type: :model do
       expect(user_with_invalid_email).to_not be_valid
     end
 
+  describe "CP36A" do
+    it "should format the user's name" do
+      user.name = "weapon ten"
+      user.save
+      expect(user.name).to eq "Weapon Ten"
+    end
+  end
+
   end
 end
