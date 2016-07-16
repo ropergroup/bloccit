@@ -30,8 +30,4 @@ class UsersController < ApplicationController
     end
   end
 
-  def confirm
-    @user = User.new
-  end
-
 end

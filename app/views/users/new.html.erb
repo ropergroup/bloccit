@@ -13,25 +13,31 @@
         </ul>
       </div>
     <% end %>
+
     <%= form_group_tag(@user.errors[:name]) do %>
       <%= f.label :name %>
       <%= f.text_field :name, autofocus: true, class: 'form-control', placeholder: "Enter name" %>
     <% end %>
+
     <%= form_group_tag(@user.errors[:email]) do %>
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control', placeholder: "Enter email" %>
     <% end %>
+
     <%= form_group_tag(@user.errors[:password]) do %>
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control', placeholder: "Enter password" %>
     <% end %>
+
     <%= form_group_tag(@user.errors[:password_confirmation]) do %>
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Enter password confirmation" %>
     <% end %>
+
     <div class="form-group">
       <%= f.submit "Sign up", class: 'btn btn-success' %>
     </div>
     <% end %>
+    
     </div>
   </div>
