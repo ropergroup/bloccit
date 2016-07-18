@@ -75,4 +75,12 @@ private
      end
    end
 
+   def authorize_user
+     post = Post.find(params[:id])
+
+     unless current_user == post.user || current_user.moderator? || current_user.admin?
+       flash[:alert] = "You must be an moderator to do that."
+       redirect_to [post.topic, post]
+     end
+   end
 end
