@@ -18,11 +18,13 @@
 
          <div>
             <h3>Comments</h3>
-            <%= render @post.comments %>
+            <% @post.comments.each do |comment| %>
+            <%= render partial: 'comments/comment', locals: { parent: @post, comment: comment } %>
+            <% end %>
          </div>
 
          <% if current_user %>
-         <%= render 'comments/form', comment: Comment.new, post: @post %>
+         <%= render 'comments/form', comment: Comment.new, parent: @post %>
          <% end %>
 
       </div>
