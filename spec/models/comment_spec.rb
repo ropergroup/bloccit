@@ -4,7 +4,7 @@ require 'rails_helper'
       let(:topic) { create(:topic) }
       let(:user) { create(:user) }
       let(:post) { create(:post) }
-      let(:comment) { Comment.create!(body: 'Comment Body', post: post, user: user) }
+      let(:comment) { create(:comment, post: post, user: user) }
 
      it { is_expected.to belong_to(:post) }
      it { is_expected.to belong_to(:user) }
@@ -14,14 +14,14 @@ require 'rails_helper'
 
    describe "attributes" do
      it "responds to body" do
-       expect(comment).to have_attributes(body: "Comment Body")
+       expect(comment).to have_attributes(body: comment.body)
      end
    end
 
    describe "after_create" do
 
      before do
-       @another_comment = Comment.new(body: 'Comment Body', post: post, user: user)
+        @another_comment = create(:comment)
      end
 
      it "sends an email to users who have favorited the post" do
