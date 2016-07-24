@@ -75,8 +75,8 @@ RSpec.describe User, type: :model do
   end
 
   describe "invalid user" do
-    let(:user_with_invalid_name) { User.new(name: "", email: "user@bloccit.com") }
-    let(:user_with_invalid_email) { User.new(name: "Bloccit User", email: "") }
+    let(:user_with_invalid_name) { build(:user, name: "") }
+    let(:user_with_invalid_email) { build(:user, email: "") }
 
     it "should be an invalid user due to blank name" do
       expect(user_with_invalid_name).to_not be_valid
